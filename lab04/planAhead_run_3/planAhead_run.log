@@ -10,21 +10,21 @@ Parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx
 Finished parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
 start_gui
 source /home/lord-tantatorn/digital-system-lab/lab04/pa.fromHdl.tcl
-# create_project -name lab04 -dir "/home/lord-tantatorn/digital-system-lab/lab04/planAhead_run_1" -part xc6slx9tqg144-3
+# create_project -name lab04 -dir "/home/lord-tantatorn/digital-system-lab/lab04/planAhead_run_4" -part xc6slx9tqg144-3
 # set_param project.pinAheadLayout yes
 # set srcset [get_property srcset [current_run -impl]]
-# set_property target_constrs_file "half_adder.ucf" [current_fileset -constrset]
-Adding file '/home/lord-tantatorn/digital-system-lab/lab04/half_adder.ucf' to fileset 'constrs_1'
-# set hdlfile [add_files [list {two_bit_adder.vhd}]]
+# set_property target_constrs_file "two_adder.ucf" [current_fileset -constrset]
+Adding file '/home/lord-tantatorn/digital-system-lab/lab04/two_adder.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {two_adder.vhd}]]
 # set_property file_type VHDL $hdlfile
 # set_property library work $hdlfile
-# set_property top two_bit_adder $srcset
-# add_files [list {half_adder.ucf}] -fileset [get_property constrset [current_run]]
+# set_property top two_adder $srcset
+# add_files [list {two_adder.ucf}] -fileset [get_property constrset [current_run]]
 # open_rtl_design -part xc6slx9tqg144-3
 Using Verific elaboration
 Parsing VHDL file "/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
 Parsing VHDL file "/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
-Parsing VHDL file "/home/lord-tantatorn/digital-system-lab/lab04/two_bit_adder.vhd" into library work
+Parsing VHDL file "/home/lord-tantatorn/digital-system-lab/lab04/two_adder.vhd" into library work
 Loading clock regions from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockRegion.xml
 Loading clock buffers from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockBuffers.xml
 Loading package pin functions from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/PinFunctions.xml...
@@ -32,21 +32,40 @@ Loading package from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan
 Loading io standards from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan6/IOStandards.xml
 Loading device configuration modes from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/ConfigModes.xml
 Loading list of drcs for the architecture : /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan6/drc.xml
-Parsing UCF File [/home/lord-tantatorn/digital-system-lab/lab04/half_adder.ucf]
-CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'sum' [/home/lord-tantatorn/digital-system-lab/lab04/half_adder.ucf:3]
-CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'carry' [/home/lord-tantatorn/digital-system-lab/lab04/half_adder.ucf:4]
-CRITICAL WARNING: [Constraints 18-5] Cannot loc instance 'sw0_sw1_AND_1' at site P95, Unknown instance type 'RTL_AND' [/home/lord-tantatorn/digital-system-lab/lab04/half_adder.ucf:17]
-Finished Parsing UCF File [/home/lord-tantatorn/digital-system-lab/lab04/half_adder.ucf]
-INFO: [Designutils 20-20] Invalid constraints found, use command 'write_ucf -constraints invalid <file>' to save all the invalid constraints to a file
+Parsing UCF File [/home/lord-tantatorn/digital-system-lab/lab04/two_adder.ucf]
+Finished Parsing UCF File [/home/lord-tantatorn/digital-system-lab/lab04/two_adder.ucf]
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Phase 0 | Netlist Checksum: d287a21d
-open_rtl_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:10 . Memory (MB): peak = 2893.215 ; gain = 181.027
+Phase 0 | Netlist Checksum: f66e6d47
+open_rtl_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:08 . Memory (MB): peak = 2861.469 ; gain = 138.035
 update_compile_order -fileset sim_1
-set_property iostandard LVCMOS25 [get_ports [list sw0]]
+startgroup
+set_property package_pin P66 [get_ports sw0]
+endgroup
+startgroup
+set_property package_pin P62 [get_ports sw1]
+endgroup
+startgroup
+set_property package_pin P61 [get_ports sw2]
+endgroup
+startgroup
+set_property package_pin P59 [get_ports sw3]
+endgroup
+set_property package_pin "" [get_ports [list  carry1]]
+set_property package_pin "" [get_ports [list  sum1]]
+startgroup
+set_property package_pin P82 [get_ports sum0]
+endgroup
+set_property package_pin "" [get_ports [list  carry1]]
+startgroup
+set_property package_pin P81 [get_ports sum1]
+endgroup
+startgroup
+set_property package_pin P80 [get_ports carry1]
+endgroup
 save_constraints
 exit
 ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
-INFO: [Common 17-206] Exiting PlanAhead at Sun Sep  8 21:36:07 2019...
+INFO: [Common 17-206] Exiting PlanAhead at Sun Sep  8 21:50:19 2019...
 INFO: [Common 17-83] Releasing license: PlanAhead
