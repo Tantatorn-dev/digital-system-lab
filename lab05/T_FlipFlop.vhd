@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    21:44:15 09/08/2019 
+-- Create Date:    19:47:55 09/14/2019 
 -- Design Name: 
--- Module Name:    two_adder - Behavioral 
+-- Module Name:    T_FlipFlop - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,21 +29,28 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity two_adder is
-    Port ( sw0 : in  STD_LOGIC;
-           sw1 : in  STD_LOGIC;
-           sw2 : in  STD_LOGIC;
-           sw3 : in  STD_LOGIC;
-           sum0 : out  STD_LOGIC;
-           sum1 : out  STD_LOGIC;
-           carry1 : out  STD_LOGIC);
-end two_adder;
+entity T_FlipFlop is
+    Port ( T : in  STD_LOGIC;
+           Q : out  STD_LOGIC;
+           Qb : out  STD_LOGIC;
+           Clk : in  STD_LOGIC);
+end T_FlipFlop;
 
-architecture Behavioral of two_adder is
-	signal carry0: STD_LOGIC;
+architecture Behavioral of T_FlipFlop is
+	signal temp : STD_LOGIC;
 begin
-	sum0 <= sw0 xor sw1;
-	carry0 <= sw0 and sw1;
-	sum1	<= carry0 xor  (sw2 xor sw3);
-	carry1 <= (carry0 and (sw2 xor sw3)) or (sw2 and sw3);
+		
+	process(T,Clk)
+	variable temp: STD_LOGIC := '0';
+	begin
+	if (RISING_EDGE(Clk)) then
+		if(T = '1') then
+			temp := not temp;
+		end if;
+	end if;
+	Q <= not temp;
+	Qb <= temp;
+	end process;
+	
 end Behavioral;
+
