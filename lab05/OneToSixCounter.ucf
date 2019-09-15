@@ -9,5 +9,9 @@ NET "SevSeg[3]" LOC = P34;
 NET "SevSeg[2]" LOC = P32;
 NET "SevSeg[1]" LOC = P29;
 NET "SevSeg[0]" LOC = P27;
-NET "Clk" LOC = P45;
-NET "Clk" CLOCK_DEDICATED_ROUTE = FALSE;
+
+
+NET "Input[3]" LOC = P59;
+NET "Input[2]" LOC = P61;
+NET "Input[1]" LOC = P62;
+NET "Input[0]" LOC = P66;
