@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    21:29:58 09/14/2019 
+-- Create Date:    02:22:38 10/05/2019 
 -- Design Name: 
--- Module Name:    FourBitsToSevenSegment - Behavioral 
+-- Module Name:    BCDToSevSeg - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,20 +29,16 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity FourBitsToSevenSegment is
-    Port ( Input  : in STD_LOGIC_VECTOR (3 downto 0);
-			  COMMON2 : out STD_LOGIC;
-			  COMMON3 : out STD_LOGIC;
+entity BCDToSevSeg is
+	 Port ( Input  : in STD_LOGIC_VECTOR (3 downto 0);
            SevSeg : out STD_LOGIC_VECTOR (6 downto 0));
-end FourBitsToSevenSegment;
+end BCDToSevSeg;
 
-architecture Behavioral of FourBitsToSevenSegment is
+architecture Behavioral of BCDToSevSeg is
 
 begin
-	COMMON2 <= '1';
-	COMMON3 <= '1';
-	
-	process(Input)
+
+process(Input)
 	begin
 		case Input is
 			when "0000" => SevSeg <= "1111110" ;
@@ -58,6 +54,5 @@ begin
 			when others => SevSeg <= "0000000" ;
 		end case;
 	end process;
-	
 end Behavioral;
 
