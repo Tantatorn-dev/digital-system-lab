@@ -1,0 +1,8 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "start_stop" LOC = P45;
+NET "clk_in" LOC = P123;
+NET "clk_display" LOC = P82;
+NET "clk_counter" LOC = P81;
+NET "start_stop" CLOCK_DEDICATED_ROUTE = TRUE;

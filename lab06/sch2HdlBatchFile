@@ -1,3 +1,4 @@
 sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab06/CounterNaja.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab06/CounterNaja.sch
+sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab06/divide2.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab06/divide2.sch
+sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab06/divide5.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab06/divide5.sch
 sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab06/divider.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab06/divider.sch
-sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab06/CounterNaja.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab06/CounterNaja.sch
