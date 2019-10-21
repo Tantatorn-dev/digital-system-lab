@@ -1,9 +1,6 @@
-sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab07/sec_counter.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab07/sec_counter.sch
-sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab07/min_counter.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab07/min_counter.sch
 sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab07/control.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab07/control.sch
 sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab07/main.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab07/main.sch
-sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab07/divide2.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab06/divide2.sch
-sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab07/divide5.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab06/divide5.sch
-sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab07/divideTo1Hz.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab07/divideTo1Hz.sch
 sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab07/display.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab07/display.sch
-sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab07/divideTo100Hz.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab07/divideTo100Hz.sch
+sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab07/divideTo2Hz.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab07/divideTo2Hz.sch
+sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab07/control.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab07/control.sch
+sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab07/main.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab07/main.sch

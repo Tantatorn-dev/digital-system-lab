@@ -9,7 +9,6 @@
         <signal name="XLXN_1" />
         <signal name="start_stop" />
         <signal name="XLXN_3" />
-        <signal name="XLXN_4" />
         <signal name="XLXN_8" />
         <signal name="clk_counter" />
         <signal name="clk_display" />
@@ -18,20 +17,17 @@
         <signal name="XLXN_16" />
         <signal name="XLXN_17" />
         <signal name="clear" />
+        <signal name="XLXN_18" />
+        <signal name="clk_dot" />
         <port polarity="Input" name="start_stop" />
         <port polarity="Output" name="clk_counter" />
         <port polarity="Output" name="clk_display" />
         <port polarity="Input" name="clk_in" />
         <port polarity="Input" name="sw_clear" />
         <port polarity="Output" name="clear" />
+        <port polarity="Output" name="clk_dot" />
         <blockdef name="divideTo1Hz">
             <timestamp>2019-10-20T9:59:58</timestamp>
-            <rect width="256" x="64" y="-64" height="64" />
-            <line x2="0" y1="-32" y2="-32" x1="64" />
-            <line x2="384" y1="-32" y2="-32" x1="320" />
-        </blockdef>
-        <blockdef name="divideTo100Hz">
-            <timestamp>2019-10-20T9:46:0</timestamp>
             <rect width="256" x="64" y="-64" height="64" />
             <line x2="0" y1="-32" y2="-32" x1="64" />
             <line x2="384" y1="-32" y2="-32" x1="320" />
@@ -82,13 +78,21 @@
             <line x2="64" y1="0" y2="-64" x1="64" />
             <circle r="16" cx="144" cy="-32" />
         </blockdef>
+        <blockdef name="divideTo500Hz">
+            <timestamp>2019-10-21T2:36:46</timestamp>
+            <rect width="256" x="64" y="-64" height="64" />
+            <line x2="0" y1="-32" y2="-32" x1="64" />
+            <line x2="384" y1="-32" y2="-32" x1="320" />
+        </blockdef>
+        <blockdef name="divideTo2Hz">
+            <timestamp>2019-10-21T4:20:25</timestamp>
+            <rect width="256" x="64" y="-64" height="64" />
+            <line x2="0" y1="-32" y2="-32" x1="64" />
+            <line x2="384" y1="-32" y2="-32" x1="320" />
+        </blockdef>
         <block symbolname="divideTo1Hz" name="XLXI_1">
             <blockpin signalname="XLXN_8" name="clk_in" />
             <blockpin signalname="clk_counter" name="clk_out" />
-        </block>
-        <block symbolname="divideTo100Hz" name="XLXI_2">
-            <blockpin signalname="clk_in" name="clk_in" />
-            <blockpin signalname="clk_display" name="clk_out" />
         </block>
         <block symbolname="ftc" name="XLXI_3">
             <blockpin signalname="start_stop" name="C" />
@@ -116,6 +120,14 @@
             <blockpin signalname="XLXN_16" name="I" />
             <blockpin signalname="XLXN_17" name="O" />
         </block>
+        <block symbolname="divideTo500Hz" name="XLXI_10">
+            <blockpin signalname="clk_in" name="clk_in" />
+            <blockpin signalname="clk_display" name="clk_out" />
+        </block>
+        <block symbolname="divideTo2Hz" name="XLXI_11">
+            <blockpin signalname="clk_in" name="clk_in" />
+            <blockpin signalname="clk_dot" name="clk_out" />
+        </block>
     </netlist>
     <sheet sheetnum="1" width="3520" height="2720">
         <instance x="160" y="864" name="XLXI_4" orien="R0" />
@@ -134,8 +146,6 @@
             <wire x2="448" y1="976" y2="976" x1="224" />
         </branch>
         <instance x="448" y="1232" name="XLXI_3" orien="R0" />
-        <instance x="1552" y="1296" name="XLXI_2" orien="R0">
-        </instance>
         <instance x="1536" y="976" name="XLXI_1" orien="R0">
         </instance>
         <branch name="XLXN_8">
@@ -155,6 +165,8 @@
             <wire x2="992" y1="912" y2="912" x1="896" />
             <wire x2="896" y1="912" y2="1264" x1="896" />
             <wire x2="1552" y1="1264" y2="1264" x1="896" />
+            <wire x2="896" y1="1264" y2="1408" x1="896" />
+            <wire x2="1552" y1="1408" y2="1408" x1="896" />
         </branch>
         <iomarker fontsize="28" x="816" y="784" name="clk_in" orien="R180" />
         <branch name="sw_clear">
@@ -183,5 +195,13 @@
             <wire x2="2256" y1="1632" y2="1632" x1="2224" />
         </branch>
         <iomarker fontsize="28" x="2256" y="1632" name="clear" orien="R0" />
+        <instance x="1552" y="1296" name="XLXI_10" orien="R0">
+        </instance>
+        <instance x="1552" y="1440" name="XLXI_11" orien="R0">
+        </instance>
+        <branch name="clk_dot">
+            <wire x2="1968" y1="1408" y2="1408" x1="1936" />
+        </branch>
+        <iomarker fontsize="28" x="1968" y="1408" name="clk_dot" orien="R0" />
     </sheet>
 </drawing>
