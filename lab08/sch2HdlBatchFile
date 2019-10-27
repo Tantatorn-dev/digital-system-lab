@@ -1,1 +1,5 @@
 sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab08/main.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab08/main.sch
+sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab08/Selector.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab08/Selector.sch
+sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab08/divide2.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab06/divide2.sch
+sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab08/divide5.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab06/divide5.sch
+sch2hdl,-intstyle,ise,-family,spartan6,-flat,-suppress,-vhdl,/home/lord-tantatorn/digital-system-lab/lab08/divideTo200Hz.vhf,-w,/home/lord-tantatorn/digital-system-lab/lab08/divideTo200Hz.sch
