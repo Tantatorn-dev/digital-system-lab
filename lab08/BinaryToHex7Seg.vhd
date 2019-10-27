@@ -1,11 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    02:22:38 10/05/2019 
--- Design Name: 
--- Module Name:    BinaryToHex7Seg - Behavioral 
--- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
 -- Description: 
@@ -34,7 +26,7 @@ entity BinaryToHex7Seg is
            Output : out STD_LOGIC_VECTOR (6 downto 0));
 end BinaryToHex7Seg;
 
-architecture Behavioral of BinaryToHex7Seg is
+architecture Behavioral of BinaryToHex is
 
 begin
 
