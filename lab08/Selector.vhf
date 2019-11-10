@@ -7,7 +7,7 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Selector.vhf
--- /___/   /\     Timestamp : 10/27/2019 20:52:27
+-- /___/   /\     Timestamp : 10/28/2019 09:29:12
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -18,33 +18,6 @@
 --    This vhdl netlist is translated from an ECS schematic. It can be 
 --    synthesized and simulated, but it should not be modified. 
 --
------ CELL INV4_HXILINX_Selector -----
-  
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
-
-entity INV4_HXILINX_Selector is
-  
-port(
-    O0  : out std_logic;
-    O1  : out std_logic;
-    O2  : out std_logic;
-    O3  : out std_logic;
-
-    I0  : in std_logic;
-    I1  : in std_logic;
-    I2  : in std_logic;
-    I3  : in std_logic
-  );
-end INV4_HXILINX_Selector;
-
-architecture INV4_HXILINX_Selector_V of INV4_HXILINX_Selector is
-begin
-  O0 <= not I0 ;
-  O1 <= not I1 ;
-  O2 <= not I2 ;
-  O3 <= not I3 ;
-end INV4_HXILINX_Selector_V;
 ----- CELL M4_1E_HXILINX_Selector -----
   
 library IEEE;
@@ -260,20 +233,18 @@ library UNISIM;
 use UNISIM.Vcomponents.ALL;
 
 entity Selector is
-   port ( Carry   : in    std_logic_vector (3 downto 0); 
-          Clkin   : in    std_logic; 
+   port ( Clkin   : in    std_logic; 
           M       : in    std_logic_vector (3 downto 0); 
           N       : in    std_logic_vector (3 downto 0); 
           C0      : out   std_logic; 
           C1      : out   std_logic; 
-          C2      : out   std_logic; 
-          C3      : out   std_logic; 
           Output7 : out   std_logic_vector (6 downto 0));
 end Selector;
 
 architecture BEHAVIORAL of Selector is
    attribute HU_SET     : string ;
    attribute BOX_TYPE   : string ;
+   signal Carry   : std_logic_vector (3 downto 0);
    signal Output  : std_logic_vector (3 downto 0);
    signal Q0      : std_logic;
    signal Q1      : std_logic;
@@ -281,10 +252,8 @@ architecture BEHAVIORAL of Selector is
    signal XLXN_36 : std_logic;
    signal XLXN_37 : std_logic;
    signal XLXN_38 : std_logic;
-   signal XLXN_39 : std_logic;
    signal XLXN_48 : std_logic;
    signal XLXN_52 : std_logic;
-   signal XLXN_56 : std_logic_vector (3 downto 0);
    component M4_1E_HXILINX_Selector
       port ( D0 : in    std_logic; 
              D1 : in    std_logic; 
@@ -331,35 +300,29 @@ architecture BEHAVIORAL of Selector is
              D3 : out   std_logic);
    end component;
    
-   component INV4_HXILINX_Selector
-      port ( I0 : in    std_logic; 
-             I1 : in    std_logic; 
-             I2 : in    std_logic; 
-             I3 : in    std_logic; 
-             O0 : out   std_logic; 
-             O1 : out   std_logic; 
-             O2 : out   std_logic; 
-             O3 : out   std_logic);
-   end component;
-   
    component GND
       port ( G : out   std_logic);
    end component;
    attribute BOX_TYPE of GND : component is "BLACK_BOX";
    
-   attribute HU_SET of XLXI_1_0 : label is "XLXI_1_0_11";
-   attribute HU_SET of XLXI_1_1 : label is "XLXI_1_1_10";
-   attribute HU_SET of XLXI_1_2 : label is "XLXI_1_2_9";
-   attribute HU_SET of XLXI_1_3 : label is "XLXI_1_3_8";
-   attribute HU_SET of XLXI_8 : label is "XLXI_8_12";
-   attribute HU_SET of XLXI_9 : label is "XLXI_9_13";
-   attribute HU_SET of XLXI_10 : label is "XLXI_10_14";
+   component INV
+      port ( I : in    std_logic; 
+             O : out   std_logic);
+   end component;
+   attribute BOX_TYPE of INV : component is "BLACK_BOX";
+   
+   attribute HU_SET of XLXI_1_0 : label is "XLXI_1_0_3";
+   attribute HU_SET of XLXI_1_1 : label is "XLXI_1_1_2";
+   attribute HU_SET of XLXI_1_2 : label is "XLXI_1_2_1";
+   attribute HU_SET of XLXI_1_3 : label is "XLXI_1_3_0";
+   attribute HU_SET of XLXI_8 : label is "XLXI_8_4";
+   attribute HU_SET of XLXI_9 : label is "XLXI_9_5";
 begin
    XLXI_1_0 : M4_1E_HXILINX_Selector
       port map (D0=>N(0),
                 D1=>M(0),
                 D2=>Carry(0),
-                D3=>XLXN_56(0),
+                D3=>Carry(0),
                 E=>XLXN_48,
                 S0=>Q0,
                 S1=>Q1,
@@ -369,7 +332,7 @@ begin
       port map (D0=>N(1),
                 D1=>M(1),
                 D2=>Carry(1),
-                D3=>XLXN_56(1),
+                D3=>Carry(1),
                 E=>XLXN_48,
                 S0=>Q0,
                 S1=>Q1,
@@ -379,7 +342,7 @@ begin
       port map (D0=>N(2),
                 D1=>M(2),
                 D2=>Carry(2),
-                D3=>XLXN_56(2),
+                D3=>Carry(2),
                 E=>XLXN_48,
                 S0=>Q0,
                 S1=>Q1,
@@ -389,7 +352,7 @@ begin
       port map (D0=>N(3),
                 D1=>M(3),
                 D2=>Carry(3),
-                D3=>XLXN_56(3),
+                D3=>Carry(3),
                 E=>XLXN_48,
                 S0=>Q0,
                 S1=>Q1,
@@ -422,32 +385,33 @@ begin
                 D0=>XLXN_36,
                 D1=>XLXN_37,
                 D2=>XLXN_38,
-                D3=>XLXN_39);
-   
-   XLXI_10 : INV4_HXILINX_Selector
-      port map (I0=>XLXN_39,
-                I1=>XLXN_38,
-                I2=>XLXN_37,
-                I3=>XLXN_36,
-                O0=>C3,
-                O1=>C2,
-                O2=>C1,
-                O3=>C0);
+                D3=>XLXN_38);
    
    XLXI_12 : GND
       port map (G=>XLXN_52);
    
    XLXI_13_0 : GND
-      port map (G=>XLXN_56(0));
+      port map (G=>Carry(0));
    
    XLXI_13_1 : GND
-      port map (G=>XLXN_56(1));
+      port map (G=>Carry(1));
    
    XLXI_13_2 : GND
-      port map (G=>XLXN_56(2));
+      port map (G=>Carry(2));
    
    XLXI_13_3 : GND
-      port map (G=>XLXN_56(3));
+      port map (G=>Carry(3));
+   
+   XLXI_15 : INV
+      port map (I=>XLXN_36,
+                O=>C0);
+   
+   XLXI_16 : INV
+      port map (I=>XLXN_37,
+                O=>C1);
+   
+   XLXI_17 : GND
+      port map (G=>XLXN_38);
    
 end BEHAVIORAL;
 
